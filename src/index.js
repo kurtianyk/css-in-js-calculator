@@ -11,8 +11,9 @@ injectGlobal`
 @import url(‘https://fonts.googleapis.com/css?family=Montserrat|Roboto');
 
   body {
-    background-color: whitesmoke;
+    height: 897px;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    background-image: linear-gradient(to bottom right, #5cc8ff 0%, #d63c6b 100%);
   }
   button {
     cursor: pointer;

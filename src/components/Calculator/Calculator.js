@@ -9,13 +9,15 @@ const calculator = new CalculatorEngine();
 
 const CalculatorRow = styled.div.attrs({
   className: 'row'
-})``
+})`
+`
 
 const CalculatorWrapper = styled.div.attrs({
   className: 'col-md-5 mx-auto'
 })`
-  background-color: #EAEAEA;
-  padding: 0 10;
+  background-color: #2d3339; 
+  padding: 0 15;
+  border-radius: 5px;
 `
 
 export default class Calculator extends Component {
@@ -121,7 +123,6 @@ export default class Calculator extends Component {
       <CalculatorRow>
         <CalculatorWrapper>
           <Display value={this.state.value} expression={this.state.expression} />
-          {
             <Keypad onDigit={this.handleOnDigit}
               onAdd={this.handleOnAdd}
               onSubtract={this.handleOnSubtract}
@@ -133,7 +134,6 @@ export default class Calculator extends Component {
               onClearAll={this.handleOnClearAll}
               onDelete={this.handleOnDelete}
               onToggleSign={this.handleOnToggleSign} />
-          }
         </CalculatorWrapper>
       </CalculatorRow>
     );

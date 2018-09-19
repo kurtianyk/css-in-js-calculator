@@ -15,26 +15,24 @@ const DisplayExpression= styled.div.attrs({
   position: absolute;
   top: 0;
   right: 0;
+  color: #fff;
 `
 
-const DisplayValue = styled.div.attrs({
-  className: ({ screen }) => (
-    screen === 'small' && 'text-right pr-2 h3 d-md-none d-sm-block pt-5' || 
-    screen === 'medium' && 'text-right pr-2 h1 d-none d-lg-none d-md-block pt-4' ||
-    'text-right pr-2 display-4 d-none d-lg-block pt-4'
-  )
-})`
+const DisplayValue = styled.div`
   background-color: #fff;
   height: 100px;
   word-wrap: break-word; 
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #345668 0%, #493d4e 100%);
+  color: #fff;
 `
 
 const Display = (props) => (
   <DisplayWrapper>
     <DisplayExpression>{props.expression}</DisplayExpression>
-    <DisplayValue screen = 'small'>{props.value}</DisplayValue>
-    <DisplayValue screen = 'medium'>{props.value}</DisplayValue>
-    <DisplayValue screen = 'large'>{props.value}</DisplayValue>
+    <DisplayValue className = 'text-right pr-2 h3 d-md-none d-sm-block pt-5'>{props.value}</DisplayValue>
+    <DisplayValue className = 'text-right pr-2 h1 d-none d-lg-none d-md-block pt-4'>{props.value}</DisplayValue>
+    <DisplayValue className = 'text-right pr-2 display-4 d-none d-lg-block pt-4'>{props.value}</DisplayValue>
   </DisplayWrapper>
 );
 

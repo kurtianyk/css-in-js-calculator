@@ -15,12 +15,10 @@ class CalculatorEngine {
     if (isNaN(digit)) {
       throw Error('Only numeric input is allowed');
     }
-
     if (result !== '') {
       result = '';
       currentValue = '';            
     }
-
     currentValue += digit;
   }
 
@@ -55,7 +53,6 @@ class CalculatorEngine {
     if (currentValue === '') {
       return;
     }
-
     currentValue = currentValue.substring(0, currentValue.length - 1);
   }
 
@@ -63,10 +60,8 @@ class CalculatorEngine {
     if (currentValue === '') {
       return;
     }
-
     register.push(currentValue);
     register.push('+');
-
     currentValue = '';
   }
 
@@ -74,10 +69,8 @@ class CalculatorEngine {
     if (currentValue === '') {
       return;
     }
-
     register.push(currentValue);
     register.push('-');
-
     currentValue = '';
   }
 
@@ -85,10 +78,8 @@ class CalculatorEngine {
     if (currentValue === '') {
       return;
     }
-
     register.push(currentValue);
     register.push('*');
-
     currentValue = '';
   }
 
@@ -96,10 +87,8 @@ class CalculatorEngine {
     if (currentValue === '') {
       return;
     }
-
     register.push(currentValue);
     register.push('/');
-      
     currentValue = '';
   }
 
@@ -107,17 +96,17 @@ class CalculatorEngine {
     if (currentValue === '') {
       return;
     }
-
     register.push(currentValue);
-
     const expression = register.join(' ');
-
     result = math.eval(expression);
     currentValue = result.toString();
     register = [];
   }
 
   toggleSign() {
+    if (currentValue === '') {
+      return;
+    }
     currentValue = (parseFloat(currentValue) * (-1)).toString();
   }
 

@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const HeaderNav = styled.nav.attrs({
-  className: 'navbar navbar-dark bg-dark'
+  className: 'navbar navbar-dark'
 })`
   height: 100px;
+  background-color: #162031;
 `
 
 const HeaderWrapper = styled.div.attrs({
